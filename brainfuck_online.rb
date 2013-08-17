@@ -10,12 +10,9 @@ require './helpers/brainfuck'
 end
 
 post '/secret' do
-	src =	params[:bfSource]
-	#begin
-	#	time = Timeout::timeout(30){ 
-	src
-	interpreted_program = Brainfuck.new(src)
-	interpreted_program.eval
+	interpreted_program = Brainfuck.new(params[:bfSource])
+	out = interpreted_program.eval
+	out
 	#	}
 	#rescue
 	#	puts "Something wrong happens..."
