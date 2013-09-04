@@ -11,6 +11,7 @@ class Brainfuck
 		@program = input.gsub(/[^\>\<\.\,\+\-\[\]]/m, '').split('') # the brainfuck program
 		@program_pos = 0   # brainfuck program pointer
 		@depth = 0 #depth of the loop 
+		@output = ""
 	end
 
 	def move_right
@@ -40,7 +41,7 @@ class Brainfuck
 	def write
 		# function for '.'
 		# output the byte at the data pointer as an ASCII encoded character.
-		print @data[@pos].chr
+		@output += @data[@pos].chr
 	end
 
 	def read
@@ -88,7 +89,7 @@ class Brainfuck
 
 	def eval
 		# evaluate the brainfuck program
-		while @program_pos < @program.size
+		while @program_pos < @program.size 
 			if @program[@program_pos] != '[' and @program[@program_pos] != ']'
 				case @program[@program_pos]
 				when '>'
@@ -113,5 +114,6 @@ class Brainfuck
 				jump_backward
 			end
 		end
+		return @output
 	end
 end
