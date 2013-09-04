@@ -1,4 +1,15 @@
-h3 Online Brainfuck Interpreter
-form action="/interpret" method="post"
-  textarea cols="100" name="bfSource" rows="10"
-  input type="submit"
+doctype html 
+html 
+  head 
+    meta charset="utf-8"
+    title Brainfuck Interpreter
+    link rel="stylesheet" media="screen, projection" href="/styles.css"
+    /[if lt IE 9] 
+      script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"
+  body 
+		h3 Yet Another Online Brainfuck Interpreter
+		form action="/interpret" method="post"
+			p	Source code:
+  			textarea cols="100" name="bfSource" rows="20" style="resize: none;"
+			p
+  			input type="submit" name="Submit Code"
