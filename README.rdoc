@@ -1,0 +1,12 @@
+Brainfuck interpreter online version written in Ruby, power by Sinatra.
+To learn about Sinatra, please go to http://www.sinatrarb.com/
+
+* To run it locally, download source code, cd to the project home directory and run:
+
+ruby brainfuck_online.rb
+
+* Go to: localhost:4567
+
+Have fun!
+
+Quoc
