@@ -11,6 +11,8 @@ class Brainfuck
 		@program = input.gsub(/[^\>\<\.\,\+\-\[\]]/m, '').split('') # the brainfuck program
 		@program_pos = 0   # brainfuck program pointer
 		@depth = 0 #depth of the loop 
+		@input = ""
+		@input_pos = 0
 		@output = ""
 	end
 
@@ -44,10 +46,12 @@ class Brainfuck
 		@output += @data[@pos].chr
 	end
 
-	def read
+	def read  
 		# function for ','
 		# accept one byte of input, storing its value in the byte at the data pointer.
-		tmp = $stdin.getc
+		# tmp = $stdin.getc
+		tmp = @input[@input_pos]
+		@input_pos += 1
 		@data[@pos] = tmp.ord
 	end
 
@@ -87,8 +91,9 @@ class Brainfuck
 		end
 	end
 
-	def eval
+	def eval program_input
 		# evaluate the brainfuck program
+		@input = program_input
 		while @program_pos < @program.size 
 			if @program[@program_pos] != '[' and @program[@program_pos] != ']'
 				case @program[@program_pos]

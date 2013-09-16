@@ -11,7 +11,7 @@ end
 
 post '/interpret' do
 	interpreted_program = Brainfuck.new(params[:bfSource])
-	@output = interpreted_program.eval
+	@output = interpreted_program.eval(params[:bfInput])
 	slim :interpret
 end
 

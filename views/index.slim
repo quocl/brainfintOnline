@@ -9,7 +9,13 @@ html
   body 
 		h3 Yet Another Online Brainfuck Interpreter
 		form action="/interpret" method="post"
-			p	Source code:
+			p	
+				source code:
+			p
   			textarea cols="100" name="bfSource" rows="20" style="resize: none;"
+			p	
+				program input:
+			p
+				textarea cols="100" name="bfInput" rows="20" style="resize: none;"
 			p
   			input type="submit" name="Submit Code"
