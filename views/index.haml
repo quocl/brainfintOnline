@@ -1,0 +1,17 @@
+!!!
+%html
+	%head
+		%meta{charset: "utf-8"}/
+		%title Brainfuck Interpreter
+		%link{href: "/styles.css", media: "screen, projection", rel: "stylesheet"}/
+	%body
+		%h3 Yet Another Online Brainfuck Interpreter
+		%form{action: "/interpret", method: "post"}
+			%p Source code:
+			%p	
+				%textarea{cols: "100", name: "bfSource", rows: "20", style: "resize: none;"}
+			%p Program input:
+			%p
+				%textarea{cols: "100", name: "bfInput", rows: "5", style: "resize: none;"}
+			%p
+				%input{name: "Submit Code", type: "submit"}/

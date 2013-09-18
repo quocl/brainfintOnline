@@ -1,17 +1,17 @@
 require 'sinatra'
 require 'timeout'
-require 'slim'
+require 'haml'
 require './helpers/brainfuck'
 
 ['/', '/home'].each do |home|
 	get "#{home}" do
-		slim :index
+		haml :index
 	end
 end
 
 post '/interpret' do
 	interpreted_program = Brainfuck.new(params[:bfSource])
 	@output = interpreted_program.eval(params[:bfInput])
-	slim :interpret
+	haml :interpret
 end
 
