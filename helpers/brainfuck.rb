@@ -92,10 +92,11 @@ class Brainfuck
 	end
 
 	def eval program_input
-		# evaluate the brainfuck program
+		# evaluate the brainfuck program. Time limit is 30 seconds.
 		@input = program_input
-		while @program_pos < @program.size 
-			if @program[@program_pos] != '[' and @program[@program_pos] != ']'
+		t1 = Time.now
+		while @program_pos < @program.size and Time.now - t1 < 30		 
+			if @program[@program_pos] != '[' and @program[@program_pos] != ']'				
 				case @program[@program_pos]
 				when '>'
 					move_right

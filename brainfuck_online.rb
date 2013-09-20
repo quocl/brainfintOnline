@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'timeout'
 require 'haml'
 require './helpers/brainfuck'
 
