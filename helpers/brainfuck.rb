@@ -95,30 +95,34 @@ class Brainfuck
 		# evaluate the brainfuck program. Time limit is 15 seconds.
 		@input = program_input
 		t1 = Time.now
-		while @program_pos < @program.size and Time.now - t1 < 15 
-			if @program[@program_pos] != '[' and @program[@program_pos] != ']'				
-				case @program[@program_pos]
-				when '>'
-					move_right
-				when '<'
-					move_left
-				when '+'
-					increase
-				when '-'
-					decrease
-				when '.'
-					write
-				when ','
-					read
-				else
-					puts "Invalid input: Unrecognized character #{@program[@program_pos]}"
+		begin
+			while @program_pos < @program.size and Time.now - t1 < 15 
+				if @program[@program_pos] != '[' and @program[@program_pos] != ']'				
+					case @program[@program_pos]
+					when '>'
+						move_right
+					when '<'
+						move_left
+					when '+'
+						increase
+					when '-'
+						decrease
+					when '.'
+						write
+					when ','
+						read
+					else
+						puts "Invalid input: Unrecognized character #{@program[@program_pos]}"
+					end
+					@program_pos += 1 
+				elsif @program[@program_pos] == '['
+					jump_forward
+				elsif @program[@program_pos] == ']'
+					jump_backward
 				end
-				@program_pos += 1 
-			elsif @program[@program_pos] == '['
-				jump_forward
-			elsif @program[@program_pos] == ']'
-				jump_backward
 			end
+		rescue
+			@output = "Cannot run..."
 		end
 		return @output
 	end
