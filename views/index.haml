@@ -4,14 +4,21 @@
 		%meta{charset: "utf-8"}/
 		%title Brainfuck Interpreter
 		%link{href: "/styles.css", media: "screen, projection", rel: "stylesheet"}/
+		=	bootstrap_assets
 	%body
-		%h3 Yet Another Online Brainfuck Interpreter
-		%form{action: "/interpret", method: "post"}
-			%p Source code:
-			%p	
-				%textarea{cols: "100", name: "bfSource", rows: "20", style: "resize: none;"}
-			%p Program input:
-			%p
-				%textarea{cols: "100", name: "bfInput", rows: "5", style: "resize: none;"}
-			%p
-				%input{name: "Submit Code", type: "submit"}/
+		.container
+			.row
+				.span9
+					%h3 Yet Another Online Brainfuck Interpreter
+					%form{action: "/interpret", method: "post"}
+						%h5
+							Source Code:
+						%p	
+							%textarea{class: "span6", cols: "500", name: "bfSource", rows: "20", style: "resize: none;"}
+						%h5
+							Program Input:
+						%p
+							%textarea{class: "span6", cols: "100", name: "bfInput", rows: "5", style: "resize: none;"}
+						%p
+							%input{name: "Submit Code", type: "submit", class: "btn btn-primary"}/
+								
