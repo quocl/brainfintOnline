@@ -1,24 +1,43 @@
-!!!
-%html
-	%head
-		%meta{charset: "utf-8"}/
-		%title Brainfuck Interpreter
-		%link{href: "/styles.css", media: "screen, projection", rel: "stylesheet"}/
-		=	bootstrap_assets
-	%body
-		.container
-			.row
-				.span9
-					%h3 Yet Another Online Brainfuck Interpreter
-					%form{action: "/interpret", method: "post"}
-						%h5
-							Source Code:
-						%p	
-							%textarea{class: "span6", cols: "500", name: "bfSource", rows: "20", style: "resize: none;"}
-						%h5
-							Program Input:
-						%p
-							%textarea{class: "span6", cols: "100", name: "bfInput", rows: "5", style: "resize: none;"}
-						%p
-							%input{name: "Submit Code", type: "submit", class: "btn btn-primary"}/
+.container
+	.row
+		.span8
+			%form{action: "/interpret", method: "post"}
+				%h5
+					Source Code:
+				%p	
+					%textarea{class: "span7", cols: "500", name: "bfSource", rows: "15", style: "resize: none;"}
+				%h5
+					Program Input:
+				%p
+					%textarea{class: "span7", cols: "100", name: "bfInput", rows: "5", style: "resize: none;"}
+				%p
+					%input{name: "Submit Code", type: "submit", class: "btn btn-primary"}/
+							
+		.span4
+			%h4
+				About
+			.well
+				%div
+					%b This website:
+					This is an online brainfuck programming language interpreter.
+				%hr
+				%div
+					%b Brainfuck:
+					An esoteric programming language. This language is created only to, well, its name says it all.
+					Other than to challenge your brain and probably to have fun, it has no practical use. However, it is surprising to know that
+					the language contains only 8 commands, each has a single character: 
+					%b, . + - [ ] > and <
+					(comma, dot, plus, minus, open square bracket, close square bracket, greater and smaller).
+				%hr	
+				%div
+					%b Interpreter:
+					A computer program that performs (executes) instructions in another computer program.
+					For example, when you run the following line of code in the Ruby language  
+					%code puts "Hello World" 
+					, the  Hello World is printed on your computer screen. How can your computer know to print that? 
+					Because there is an interpreter that is able to understand your code and excutes it.
+				%hr
+					%b How to use this:
+					Sure, you can find some sample brainfuck program on the net, paste the source code here and run it.
+					I hope you have fun learning something new (and useless :P).
 								

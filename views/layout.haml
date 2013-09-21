@@ -1,0 +1,21 @@
+%html
+	%head
+		%meta{charset: "utf-8"}/
+		%title Brainfuck Interpreter
+		%link{href: "/styles.css", media: "screen, projection", rel: "stylesheet"}/
+		=	bootstrap_assets
+		%body{style: "padding-top: 80px; height: 100%;"}
+	%body
+		.navbar.navbar-inverse.navbar-fixed-top
+			.navbar-inner
+				.container
+					%a.brand{href: "#"} Yet Another Brainfuck Interpreter
+					%ul.nav
+						%li
+							%a{href: "/"} Home
+		=	yield
+	%footer.fix-bottom{style: "padding-top: 30px;"}
+		.container
+			.row
+				.span12
+					=	"Copyright © #{Time.now.year} quocle."
