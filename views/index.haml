@@ -1,6 +1,6 @@
 .container
 	.row
-		.span8
+		.span7
 			%form{action: "/interpret", method: "post"}
 				%h5
 					Source Code:
@@ -13,7 +13,7 @@
 				%p
 					%input{name: "Submit Code", type: "submit", class: "btn btn-primary"}/
 							
-		.span4
+		.span5
 			%h4
 				About
 			.well
@@ -28,7 +28,7 @@
 					the language contains only 8 commands, each has a single character: 
 					%b, . + - [ ] > and <
 					(comma, dot, plus, minus, open square bracket, close square bracket, greater and smaller).
-				%hr	
+				%hr
 				%div
 					%b Interpreter:
 					A computer program that performs (executes) instructions in another computer program.
@@ -37,7 +37,16 @@
 					, the  Hello World is printed on your computer screen. How can your computer know to print that? 
 					Because there is an interpreter that is able to understand your code and excutes it.
 				%hr
-					%b How to use this:
-					Sure, you can find some sample brainfuck program on the net, paste the source code here and run it.
-					I hope you have fun learning something new (and useless :P).
+				%div
+					%b How to use this: 
+					You can find some sample brainfuck programs on the net, run it here and see what's going on.
+				%hr
+				%div	
+					%b And how to have fun: 
+					Last but not least, I found the other half of this website: 
+					%a{ href:"http://tdwright.co.uk/phpplayground/BF/"} http://tdwright.co.uk/phpplayground/BF/ 
+					%b - A brainfuck message concealer. 
+					What does that mean? 
+					That website is able to encode your message into a brainfuck program which looks like an alien message. Wanna decode it? Run it here!
+
 								
